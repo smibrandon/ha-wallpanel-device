@@ -1,0 +1,19 @@
+{
+  "entity": {
+    "button": {
+      "clear_cache": {"default": "mdi:cached"},
+      "open_settings": {"default": "mdi:cog"},
+      "release_wake": {"default": "mdi:power-sleep"},
+      "relaunch": {"default": "mdi:home-import-outline"},
+      "reload": {"default": "mdi:reload"},
+      "wake": {"default": "mdi:weather-sunny"}
+    },
+    "number": {
+      "screen_brightness": {"default": "mdi:brightness-6"}
+    },
+    "sensor": {
+      "current_url": {"default": "mdi:web"},
+      "magnetic_field": {"default": "mdi:magnet"}
+    }
+  }
+}

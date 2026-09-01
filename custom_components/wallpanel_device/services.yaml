@@ -1,0 +1,84 @@
+load_url:
+  name: Load URL
+  description: Loads a URL in WallPanel on the selected tablets.
+  fields:
+    device_id:
+      name: Device
+      description: WallPanel devices that should load the URL.
+      required: true
+      selector:
+        device:
+          integration: wallpanel_device
+          multiple: true
+    url:
+      name: URL
+      description: URL to display.
+      required: true
+      selector:
+        text:
+          type: url
+
+speak:
+  name: Speak
+  description: Speaks text using the selected tablets' Android TTS engines.
+  fields:
+    device_id:
+      name: Device
+      description: WallPanel devices that should speak.
+      required: true
+      selector:
+        device:
+          integration: wallpanel_device
+          multiple: true
+    message:
+      name: Message
+      description: Text to speak.
+      required: true
+      selector:
+        text:
+          multiline: true
+
+wake:
+  name: Wake
+  description: Wakes selected WallPanel tablets for a specified duration.
+  fields:
+    device_id:
+      name: Device
+      description: WallPanel devices to wake.
+      required: true
+      selector:
+        device:
+          integration: wallpanel_device
+          multiple: true
+    duration:
+      name: Duration
+      description: Number of seconds WallPanel should hold the screen awake.
+      default: 180
+      selector:
+        number:
+          min: 1
+          max: 86400
+          step: 1
+          unit_of_measurement: seconds
+          mode: box
+
+evaluate_javascript:
+  name: Evaluate JavaScript
+  description: Evaluates JavaScript inside the currently displayed WallPanel page.
+  fields:
+    device_id:
+      name: Device
+      description: WallPanel devices on which to evaluate the JavaScript.
+      required: true
+      selector:
+        device:
+          integration: wallpanel_device
+          multiple: true
+    javascript:
+      name: JavaScript
+      description: JavaScript source to evaluate in the dashboard WebView.
+      required: true
+      selector:
+        text:
+          multiline: true
+
