@@ -1,0 +1,85 @@
+{
+  "config": {
+    "abort": {
+      "already_configured": "This WallPanel device is already configured.",
+      "reconfigure_successful": "WallPanel Device was reconfigured successfully.",
+      "unique_id_mismatch": "The MQTT client ID must identify the same WallPanel device."
+    },
+    "error": {
+      "cannot_connect": "Could not connect to WallPanel. Verify the IP address, port, and REST API setting.",
+      "unknown": "An unexpected error occurred."
+    },
+    "step": {
+      "user": {
+        "title": "Add WallPanel device",
+        "description": "Connect to WallPanel's HTTP API and MQTT sensor feed.",
+        "data": {
+          "device_name": "Device name",
+          "host": "IP address or hostname",
+          "port": "HTTP port",
+          "mqtt_client_id": "WallPanel MQTT client ID",
+          "mqtt_base_topic": "WallPanel MQTT base topic",
+          "remove_native_discovery": "Replace WallPanel's built-in MQTT discovery entities"
+        },
+        "data_description": {
+          "device_name": "The name of the complete Home Assistant device.",
+          "host": "The tablet's LAN IP address or hostname.",
+          "port": "WallPanel's HTTP listening port, normally 2971.",
+          "mqtt_client_id": "The exact Client ID configured in WallPanel MQTT settings.",
+          "mqtt_base_topic": "The exact Base Topic configured in WallPanel, for example wallpanel/firewhite-livingrm/.",
+          "remove_native_discovery": "Clear WallPanel's retained sensor discovery definitions so this integration can provide one complete device. Disable Home Assistant Discovery in WallPanel first."
+        }
+      },
+      "reconfigure": {
+        "title": "Reconfigure WallPanel device",
+        "data": {
+          "device_name": "Device name",
+          "host": "IP address or hostname",
+          "port": "HTTP port",
+          "mqtt_client_id": "WallPanel MQTT client ID",
+          "mqtt_base_topic": "WallPanel MQTT base topic",
+          "remove_native_discovery": "Replace WallPanel's built-in MQTT discovery entities"
+        }
+      }
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "ac_plugged": {"name": "AC plugged"},
+      "camera_enabled": {"name": "Camera enabled"},
+      "charging": {"name": "Charging"},
+      "face": {"name": "Face detected"},
+      "mqtt_connected": {"name": "MQTT connected"},
+      "motion": {"name": "Motion"},
+      "screen_on": {"name": "Screen on"},
+      "usb_plugged": {"name": "USB plugged"}
+    },
+    "button": {
+      "clear_cache": {"name": "Clear browser cache"},
+      "open_settings": {"name": "Open settings"},
+      "release_wake": {"name": "Release screen wake"},
+      "relaunch": {"name": "Relaunch dashboard"},
+      "reload": {"name": "Reload page"},
+      "wake": {"name": "Wake screen"}
+    },
+    "camera": {
+      "camera": {"name": "Camera"}
+    },
+    "notify": {
+      "text_to_speech": {"name": "Text to speech"}
+    },
+    "number": {
+      "screen_brightness": {"name": "Screen brightness"}
+    },
+    "sensor": {
+      "battery_level": {"name": "Battery level"},
+      "current_url": {"name": "Current URL"},
+      "humidity": {"name": "Humidity"},
+      "illuminance": {"name": "Illuminance"},
+      "magnetic_field": {"name": "Magnetic field"},
+      "pressure": {"name": "Pressure"},
+      "qr_code": {"name": "QR code"},
+      "temperature": {"name": "Temperature"}
+    }
+  }
+}
